@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: vote-app-service
+  labels:
+    name: vote-app
+    author: maruti
+spec:
+  type: LoadBalancer
+  ports:
+    - targetPort: 80
+      port: 80
+      nodePort: 30009
+  selector:
+    app: vote-app
+...
