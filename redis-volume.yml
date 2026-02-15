@@ -1,0 +1,19 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: redis-pod
+  labels:
+    type: redis-pod
+    author: maruti
+spec:
+  containers:
+    - name: redis-app
+      image: marutisuresh/redis:latest  # docker hub customized repository
+      volumeMounts:
+        - name: myvolume
+          mountPath: /data/redis
+  volumes:
+    - name: myvolume
+      emptyDir: {}
+...
