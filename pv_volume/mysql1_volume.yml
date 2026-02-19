@@ -1,0 +1,22 @@
+---
+apiVersion: v1
+kind: Pod
+metadata:
+  name: mysql
+  labels:
+    author: maruti
+spec:
+  containers:
+    - name: mysql
+      image: mysql
+      env:
+        - name: MYSQL_ROOT_PASSWORD
+          value: maruti
+      volumeMounts:
+        - name: myvolume
+          mountPath: /home/marutisureshk93/k8s_files/project/pv_volume 
+  volumes:
+    - name: myvolume
+      persistentVolumeClaim:
+        claimName: pvc
+...

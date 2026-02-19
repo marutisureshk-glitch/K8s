@@ -1,0 +1,15 @@
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: myvolume
+  labels:
+    author: maruti
+spec:
+  storageClassName: standard
+  accessModes:
+    - ReadWriteOnce
+  capacity:
+    storage: 20G
+  hostPath:
+    path: /home/marutisureshk93/k8s_files/project/pv_volume  
